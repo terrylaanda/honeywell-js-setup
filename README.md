@@ -25,19 +25,19 @@ otherwise, you will have to create an account, click on `SIGNUP`.
 
 3. Once you have logged in, click on `MY APPS` and then on `CREATE NEW APP`.
 You will be asked to enter an `App Name` and a `Callback URL`.
-Please enter the values you see here: <img src='create-application.png' />
+Please enter the values you see here: <img src='01.png' />
 _(Protip: copy-paste the values from the file`config/options.global.js`.)_
 
-4. After you click on `Save Changes`, you will see something like this: <img src='save-changes.png' />
+4. After you click on `Save Changes`, you will see something like this: <img src='02.png' />
 
-5. Now click on `homebridge-honeywell-home` and you will see something like this: <img src='show-api-keys.png' />
+5. Now click on `homebridge-honeywell-home` and you will see something like this: <img src='03.png' />
 
 6. Edit the file `config/options.global.js` to include the values shown in your browser, e.g.,
 
         consumerKey: 'A5nV2bVn7Jzo4FzcZQyADZVGoxSrHAJe',
         consumerSecret: 'xjokooAQHWkqAEel'
 
-7. Click `LOG OUT`.
+7. Finaly, click on `LOG OUT`.
 
 # Generate OAuth credentials
 
@@ -45,23 +45,33 @@ In the terminal:
 
     % npm start
 
-This starts a `node ./app.js` process and opens up a browser window:
+This starts a `node ./app.js` process and opens up a browser window: <img src='04.png' />
 
-Click on the `login` link:
+Click on the `login` link: <img src='05.png' />
 
 Enter the `Email` and `Password` that you use for your
-[Honeywell Home App](https://getconnected.honeywellhome.com/en/honeywell-home-app):
+[Honeywell Home App](https://getconnected.honeywellhome.com/en/honeywell-home-app) and click on `LOG IN`: <img src='06.png' />
 
-Click on `ALLOW`:
+Skim the text, and `Click on `ALLOW`: <img src='07.png' />
 
-Select the devices that you want to manage, by clicking in the upper-right-hand corner of each device.
+Select the devices that you want to manage, by clicking in the upper-right-hand corner of each device: <img src='08.png' />
 
-Click on `CONNECT`:
-
-Very carefully copy-paste the `access_token` and `refresh_token` values.
+Click on `CONNECT`: <img src='09.png' />
 
 You will need to enter these *exact* values into the configuration section for your application,
-viz., [homebridge-honeywell-home](https://github.com/d0n4v4nb3ck3r/homebridge-honeywellhome).
+e.g., for [homebridge-honeywell-home](https://github.com/d0n4v4nb3ck3r/homebridge-honeywellhome),
+the file `~/.homebridge/config.json` would have this added to it:
+
+        { "platform"         : "homebridge-honeywell-home"
+        , "name"             : "HoneywellHome"
+        , "credentials"      :
+          { "consumerKey"    : "A5nV2bVn7Jzo4FzcZQyADZVGoxSrHAJe"
+          , "consumerSecret" : "xjokooAQHWkqAEel"
+          , "accessToken"    : "MbCNslDA5jJJdm8JRhGOXWKdPYKQ"
+          , "refreshToken"   : "YgOEocILQcPySJiLod33UzPXNFDE4rQ1"
+          }
+        , "options"          : { "ttl": 600, "verboseP" : false }
+        }
 
 You can now terminate the `node ./app.js` process started earlier.
 
