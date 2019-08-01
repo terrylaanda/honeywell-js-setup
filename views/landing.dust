@@ -12,6 +12,7 @@
 		<h1>{title}</h1>
 		<p>Welcome to {title}</p>
 		<p>You are logged in.</p>
+		<p>Please record this information:<pre>{credentials}</pre></p>
 		<div id="locations">
 
 		</div>

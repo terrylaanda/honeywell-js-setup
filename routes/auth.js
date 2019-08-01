@@ -27,11 +27,12 @@ router.get('/', function(req, res, next) {
 		function(error, stdout, stderr){
 			//console.log('stdout: ' + stdout);
 			//console.log('stderr: ' + stderr);
-			console.log('')
+			console.log('');
 			var response = JSON.parse(stdout);
 			console.log('response: ', response);
 			//console.log('Setting Access Token: ', response.access_token);
 			res.cookie( 'access_token', response.access_token);
+			res.cookie( 'refresh_token', response.refresh_token);
 			//req.cookies.access_token = response.access_token;
 			if(error !== null)
 			{
@@ -44,6 +45,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/logout', function(req, res, next) {
 	res.clearCookie( 'access_token');
+	res.clearCookie( 'refresh_token');
 	res.redirect('/');
 });
 

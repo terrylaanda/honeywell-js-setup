@@ -8,7 +8,7 @@ var HoneywellApiHelper = {
 	getAuthorization: function(){
 		var authorization =
 			base64.encode(
-				config.consumerKey + ':' + config.consumerPrivate
+				config.consumerKey + ':' + config.consumerSecret
 			);
 		return authorization;
 	},
@@ -67,7 +67,7 @@ var HoneywellApiHelper = {
 		curlString += 'curl -H "Authorization: Bearer ' + apikey + '" ';
 		curlString += 'https://api.honeywell.com/v2/devices/termostats/' + deviceId +'?';
 		curlString += 'apikey=' + config.consumerKey + '&';
-		curlString += 'locationId=' + locationId
+		curlString += 'locationId=' + locationId;
 
 		//console.log(curlString);
 		var child = exec(
@@ -87,5 +87,5 @@ var HoneywellApiHelper = {
 		);
 	}
 
-}
+};
 module.exports = HoneywellApiHelper;

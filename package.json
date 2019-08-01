@@ -1,9 +1,26 @@
 {
-  "name": "home-automation",
-  "version": "0.0.0",
-  "private": true,
+  "name": "honeywell-js",
+  "version": "0.0.1",
+  "descirption": "Simple web server to retrieve credentials for using the Honeywell Home service",
   "scripts": {
-    "start": "node ./bin/www"
+    "lint": "jshint package.json *.js src/*.js routes/*.js",
+    "start": "node ./app.js"
+  },
+  "license": "MIT",
+  "keywords": [
+    "honeywell",
+    "honeywell-home",
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/homespun/honeywellhome.git"
+  },
+  "bugs": {
+    "url": "https://github.com/homespun/honeywellhome/issues"
+  },
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.4.16"
   },
   "dependencies": {
     "adaro": "~1.0.4",
@@ -11,9 +28,10 @@
     "body-parser": "~1.18.2",
     "cookie-parser": "^1.4.3",
     "debug": "~2.6.9",
-    "express": "~4.15.5",
+    "express": "^4.17.1",
     "less-middleware": "~2.2.1",
-    "morgan": "~1.9.0",
+    "opener": "1.5.1",
+    "morgan": "^1.9.1",
     "serve-favicon": "~2.4.5",
     "urlencode": "^1.1.0"
   }

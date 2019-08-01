@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -6,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var lessMiddleware = require('less-middleware');
 var adaro = require('adaro');
+var opener = require('opener');
 
 var index = require('./routes/index');
 var auth = require('./routes/auth');
@@ -49,4 +52,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+var port = 3000;
+app.listen(port, () => {
+  console.log('opening the browser...');
+  opener(`http://127.0.0.1:${port}`);
+});

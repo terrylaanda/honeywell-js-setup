@@ -10,7 +10,8 @@ router.get('/', function(req, res, next) {
 		res.render(
 			'landing',
 			{
-				title: '3476 Panmure'
+				title: 'Testing Honeywell Home API',
+				credentials: JSON.stringify(req.cookies, null, 2)
 			}
 		);
 	} else {
@@ -19,7 +20,7 @@ router.get('/', function(req, res, next) {
 		res.render(
 			'login',
 			{
-				title: '3476 Panmure',
+				title: 'Honeywell Home API Login',
 				oathLink: oathLink
 			}
 		);
@@ -27,11 +28,11 @@ router.get('/', function(req, res, next) {
 });
 
 var getAuthLink = function(){
-	var oathLink = 'https://api.honeywell.com/oauth2/authorize?'
-	oathLink += 'response_type=code&'
+	var oathLink = 'https://api.honeywell.com/oauth2/authorize?';
+	oathLink += 'response_type=code&';
 	oathLink += 'redirect_uri=' + urlencode(config.appAuthorizeUri) + '&';
-	oathLink += '&client_id=' +  config.consumerKey;
+	oathLink += 'client_id=' +  config.consumerKey;
 	return oathLink;
-}
+};
 
 module.exports = router;

@@ -22,16 +22,17 @@ router.get( apiVersion + '/locations', function(req, res, next) {
 			if(error){
 				//todo some error handling here
 			}
+			console.log(JSON.stringify(req.cookies, null, 2));
 			res.json(locations);
 		}
-	)
+	);
 });
 
 router.get( apiVersion + '/devices/:locationId', function(req, res, next) {
 	if(!req.cookies.access_token) {
 		return res.send(403);
 	}
-	console.log('req.params.locationId: ', req.params.locationId)
+	console.log('req.params.locationId: ', req.params.locationId);
 	honeywellApiHelper.getDevices(
 		req.cookies.access_token,
 		req.params.locationId,
@@ -41,7 +42,7 @@ router.get( apiVersion + '/devices/:locationId', function(req, res, next) {
 			}
 			res.json(devices);
 		}
-	)
+	);
 });
 
 router.get( apiVersion + '/devices/thermostats/:locationId/:deviceId', function(req, res, next) {
@@ -58,7 +59,7 @@ router.get( apiVersion + '/devices/thermostats/:locationId/:deviceId', function(
 			}
 			res.json(devices);
 		}
-	)
+	);
 });
 
 
