@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 	curlString += '-d "';
 	curlString +=   'grant_type=authorization_code&';
 	curlString +=   'code=' + code + '&';
-	curlString +=   'redirect_uri=' + urlencode(config.appAuthorizeUri);
+	curlString +=   'redirect_uri=' + urlencode(config.callbackURL);
 	curlString += '" ';
 	curlString += '"https://api.honeywell.com/oauth2/token"';
 

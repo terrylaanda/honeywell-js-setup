@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 var getAuthLink = function(){
 	var oathLink = 'https://api.honeywell.com/oauth2/authorize?';
 	oathLink += 'response_type=code&';
-	oathLink += 'redirect_uri=' + urlencode(config.appAuthorizeUri) + '&';
+	oathLink += 'redirect_uri=' + urlencode(config.callbackURL) + '&';
 	oathLink += 'client_id=' +  config.consumerKey;
 	return oathLink;
 };
