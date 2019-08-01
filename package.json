@@ -1,7 +1,7 @@
 {
-  "name": "honeywell-js",
+  "name": "honeywell-js-setup",
   "version": "0.0.1",
-  "descirption": "Simple web server to retrieve credentials for using the Honeywell Home service",
+  "description": "Simple web server to retrieve credentials for using the Honeywell Home service",
   "scripts": {
     "lint": "jshint package.json *.js src/*.js routes/*.js",
     "start": "node ./app.js"
@@ -9,14 +9,14 @@
   "license": "MIT",
   "keywords": [
     "honeywell",
-    "honeywell-home",
+    "honeywell-home"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/homespun/honeywellhome.git"
+    "url": "git+https://github.com/homespun/honeywell-js-setup.git"
   },
   "bugs": {
-    "url": "https://github.com/homespun/honeywellhome/issues"
+    "url": "https://github.com/homespun/honeywell-js-setup/issues"
   },
   "engines": {
     "node": ">=0.12.0",
