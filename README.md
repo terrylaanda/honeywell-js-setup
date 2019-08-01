@@ -6,6 +6,17 @@ Applications that make use of the Honeywell Home service require [(https://en.wi
 This package started as this [repository](https://github.com/bgraham11/honeywell-js),
 and was modified to solely provide this information.
 
+The process requires two separate logins:
+
+1. A login for a developer site to generate API keys.
+You probably don't have a login for this site,
+but that's OK, because the [instructions below](#api-keys) explains the process.
+
+2. A login for a service to authorize an application.
+You probably already have a login for this service,
+because you've already created a login when you started to use the
+[Honeywell Home App](https://getconnected.honeywellhome.com/en/honeywell-home-app).
+
 # Installation
 
     npm install
