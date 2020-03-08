@@ -7,6 +7,6 @@ module.exports = {
 
 // update these values after completing Step 5 in the instructions
 
-	consumerKey: 'A5nV2bVn7Jzo4FzcZQyADZVGoxSrHAJe',
-	consumerSecret: 'xjokooAQHWkqAEel'
+	consumerKey: 'GHGLdqZ45iBSGq3GZUIZmk02IJzYjDLw',
+	consumerSecret: 'lVkD2Vy28yaGrZtp'
 };
